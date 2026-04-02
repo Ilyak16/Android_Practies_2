@@ -7,11 +7,8 @@ import kotlinx.coroutines.flow.Flow
 interface DepositDao {
 
     @Insert
-    suspend fun insert(deposit: DepositCalculation)
+    suspend fun insert(item: DepositCalculation)
 
     @Query("SELECT * FROM deposit_calculations ORDER BY calculationDate DESC")
     fun getAll(): Flow<List<DepositCalculation>>
-
-    @Query("SELECT * FROM deposit_calculations WHERE id = :id")
-    suspend fun getById(id: Long): DepositCalculation
 }
