@@ -8,7 +8,6 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ci.nsu.mobile.main.R
-
 class Step1Fragment : Fragment(R.layout.fragment_step1) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -23,7 +22,7 @@ class Step1Fragment : Fragment(R.layout.fragment_step1) {
                 "m" to m.text.toString().toInt()
             )
 
-            findNavController().navigate("step2", bundle)
+            findNavController().navigate(R.id.step2, bundle)
         }
     }
 }

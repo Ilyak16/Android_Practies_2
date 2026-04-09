@@ -12,11 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val container = FrameLayout(this).apply {
-            id = View.generateViewId()
-        }
-
+        val container = FrameLayout(this).apply { id = View.generateViewId() }
         setContentView(container)
 
         val navHost = NavHostFragment()
@@ -26,7 +22,6 @@ class MainActivity : AppCompatActivity() {
             .commitNow()
 
         val navController = navHost.navController
-
         val graph = navController.createGraph(startDestination = "main") {
             fragment<MainFragment>("main")
             fragment<Step1Fragment>("step1")
@@ -34,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             fragment<ResultFragment>("result")
             fragment<HistoryFragment>("history")
         }
-
         navController.graph = graph
     }
 }

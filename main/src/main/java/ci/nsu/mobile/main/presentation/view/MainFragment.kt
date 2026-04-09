@@ -10,13 +10,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        view.findViewById<Button>(R.id.calc).setOnClickListener {
-            findNavController().navigate("step1")
-        }
-
-        view.findViewById<Button>(R.id.history).setOnClickListener {
-            findNavController().navigate("history")
-        }
+        findNavController().navigate(R.id.step1)
+        findNavController().navigate(R.id.history)
 
         view.findViewById<Button>(R.id.exit).setOnClickListener {
             requireActivity().finish()
