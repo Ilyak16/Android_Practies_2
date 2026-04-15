@@ -18,10 +18,11 @@ class Step1Fragment : Fragment(R.layout.fragment_step1) {
         view.findViewById<Button>(R.id.next).setOnClickListener {
 
             val bundle = bundleOf(
-                "a" to a.text.toString().toDouble(),
-                "m" to m.text.toString().toInt()
+                "a" to a.text.toString().toDoubleOrNull(),
+                "m" to m.text.toString().toIntOrNull()
             )
 
+            // 🔥 ИЗМЕНЕНО: используем R.id
             findNavController().navigate(R.id.step2, bundle)
         }
     }

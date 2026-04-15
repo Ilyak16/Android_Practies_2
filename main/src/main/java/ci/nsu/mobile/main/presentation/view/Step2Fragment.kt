@@ -31,6 +31,7 @@ class Step2Fragment : Fragment(R.layout.fragment_step2) {
                 "t" to top.text.toString().toDoubleOrNull()
             )
 
+            // 🔥 ИЗМЕНЕНО
             findNavController().navigate(R.id.result, bundle)
         }
     }

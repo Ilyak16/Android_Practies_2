@@ -11,7 +11,7 @@
         android:text="Расчёт вкладов"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="24dp"/>/>
+        android:layout_marginBottom="24dp"/>
 
 
     <Button

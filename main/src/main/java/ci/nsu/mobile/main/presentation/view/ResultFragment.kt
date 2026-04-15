@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import ci.nsu.mobile.main.R
 import ci.nsu.mobile.main.data.database.AppDatabase
 import ci.nsu.mobile.main.data.repository.DepositRepository
+import ci.nsu.mobile.main.presentation.viewmodel.HistoryViewModel
 import ci.nsu.mobile.main.presentation.viewmodel.ResultViewModel
 
 class ResultFragment : Fragment(R.layout.fragment_result) {
@@ -48,7 +49,9 @@ class ResultFragment : Fragment(R.layout.fragment_result) {
         }
 
         view.findViewById<Button>(R.id.home).setOnClickListener {
-            findNavController().navigate("main")
+
+            // 🔥 ИЗМЕНЕНО
+            findNavController().navigate(R.id.mainFragment)
         }
     }
 }

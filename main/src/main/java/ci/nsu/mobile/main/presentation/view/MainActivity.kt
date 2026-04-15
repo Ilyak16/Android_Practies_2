@@ -20,15 +20,5 @@ class MainActivity : AppCompatActivity() {
             .replace(container.id, navHost)
             .setPrimaryNavigationFragment(navHost)
             .commitNow()
-
-        val navController = navHost.navController
-        val graph = navController.createGraph(startDestination = "main") {
-            fragment<MainFragment>("main")
-            fragment<Step1Fragment>("step1")
-            fragment<Step2Fragment>("step2")
-            fragment<ResultFragment>("result")
-            fragment<HistoryFragment>("history")
-        }
-        navController.graph = graph
     }
 }
