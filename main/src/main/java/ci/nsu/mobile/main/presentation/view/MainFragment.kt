@@ -10,7 +10,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        // 🔥 ИЗМЕНЕНО: теперь кнопки управляют навигацией
         view.findViewById<Button>(R.id.calc).setOnClickListener {
             findNavController().navigate(R.id.step1)
         }
