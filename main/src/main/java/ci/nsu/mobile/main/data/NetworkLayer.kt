@@ -1,5 +1,7 @@
 package ci.nsu.mobile.main.data
 
+import ci.nsu.mobile.main.MainActivity
+import ci.nsu.mobile.main.R
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
@@ -7,10 +9,6 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Response
 import retrofit2.Retrofit
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-
 class AuthInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest = chain.request()
@@ -22,15 +20,10 @@ class AuthInterceptor : Interceptor {
         return chain.proceed(requestBuilder.build())
     }
 }
-
-interface ApiService {
-    @POST("auth/login") suspend fun login(@Body request: LoginRequest): AuthResponse
-    @POST("auth/register") suspend fun register(@Body request: RegisterRequest)
-    @GET("groups") suspend fun getGroups(): List<GroupDto>
-    @GET("users") suspend fun getUsers(): List<UserDto>
-}
-
 object RetrofitClient {
+
+    //private val context = .instance
+    //val xmlResource = resources.getXml(R.xml.network_security_config)
     private const val BASE_URL = "http://192.168.200.160:8080/api/"
     private val client = OkHttpClient.Builder().addInterceptor(AuthInterceptor()).build()
     private val json = Json { ignoreUnknownKeys = true }

@@ -42,6 +42,11 @@ fun AppNavigation() {
 fun MainContainerScreen(rootNavController: NavController, factory: ViewModelFactory, authViewModel: AuthViewModel) {
     val bottomNavController = rememberNavController()
 
+
+
+
+
+
     Scaffold(
         topBar = {
             TopAppBar(
