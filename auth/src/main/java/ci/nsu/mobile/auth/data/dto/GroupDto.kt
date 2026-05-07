@@ -1,3 +1,4 @@
+@file:OptIn(kotlinx.serialization.InternalSerializationApi::class)
 package ci.nsu.mobile.auth.data.dto
 
 import kotlinx.serialization.SerialName

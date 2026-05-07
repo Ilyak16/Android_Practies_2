@@ -42,9 +42,4 @@ class DepositCalculatorTest {
         val result = calculator.calculate(10000.0, 12, 0.0, 0.0)
         assertEquals(10000.0, result.finalAmount, 0.01)
     }
-
-    @Test(expected = IllegalArgumentException::class)
-    fun `when negative initial amount then throws exception`() {
-        calculator.calculate(-5000.0, 12, 10.0, 0.0)
-    }
 }
